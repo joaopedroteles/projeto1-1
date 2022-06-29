@@ -1,0 +1,57 @@
+#include <stdio.h>                           
+#include <conio.h>                          
+#include <string.h>                          
+#include <ctype.h>                          
+char nome[51];                               
+void abreviar(){
+    int i=1,q,j,w=0;
+    char k;
+    for(j=0;j<nome[j]!='\0';j++){            
+        if(nome[j]==' '){                    
+            if(nome[j+1]==' '||nome[j+2]==' '||nome[j+3]==' '||nome[j+4]==' '){
+                                             
+                while(nome[j+i]!=' ')i++;    
+                for(q=j;nome[q+i]!='\0';q++){
+                    nome[q]=nome[q+i];       
+                                             
+                }
+                nome[q]='\0';                
+                                                                                         
+            }
+        }
+    }
+    for(j=strlen(nome);j>=0;j--){           
+        if(nome[j]==' '){                    
+            printf("%c",toupper(nome[j+1])); 
+            for(i=j+2;nome[i]!='\0';i++){    
+                printf("%c",nome[i]);       
+            }
+            printf(", ");                     
+            for(i=0;i<j+1;i++){              
+                if(w==0)k=nome[i];            
+                w++;          
+                if(nome[i]==' '){             
+                    w=0;          
+                    printf("%c. ",toupper(k));
+                }
+            }
+            break;                            
+        }
+    }
+}
+int main(){
+    int j,n;
+    printf("quer escrever quantos nomes: ");
+    scanf("%d",&n);
+    printf("%d\n",n);
+    for(j=0;j<n;j++){
+        printf("Digite o nome : ");
+        fflush(stdin);
+        gets(nome);
+        printf("\n");
+        abreviar();
+        printf("\n\n");
+    }
+    getch();
+    return 0;
+}
