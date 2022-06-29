@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void main(){
+char nome [50];
+char sexo;
+int idade;
+
+printf ("Digite a idade: \n");
+scanf("%d",&idade);
+
+/*
+x- 0 até 15 não vota
+x- 16 ou 17 opcional
+x- 18 até 64 obrigatório
+x- 65 ou mais opcional
+x- Exatamente 41 ganha prêmio 1 (não deverá apresentar obrigatório)
+x- Exatamente 82 ganha prêmio 2 (não deverá apresentar opcional)
+*/
+
+if(idade<=0)
+{
+printf(" Idade menor que 0 nao nasceu e");
+}
+
+if(idade <=64 ){
+	
+if(idade <=15){printf(" nao pode votar \n ");
+}
+else{
+	
+if(idade == 16 ){printf(" opcional \n ");
+}
+if(idade == 17 ){printf(" opcional \n ");
+}
+
+	if(idade == 41){printf(" 41 ganha premio \n ");
+	}else{
+	printf(" acima de 18 ate 64 obrigatorio \n ");
+	}}}
+	
+	if(idade >=65 ){
+	if(idade == 82){printf(" 82 ganha premio 2 \n ");
+	}else{
+	printf(" 65 ou mais opcional \n ");
+	}}
+
+	
+
+	
+return 0;
+
+} 
